@@ -1,14 +1,11 @@
-import { useState } from "react";
 import "./App.css";
 
-import Sidebar from "./Components/sidebar/Sidebar";
-import Footer from "./Components/footer/Footer";
-import Navbar from './Components/navbar/Navbar'
+import Sidebar from "./components/sidebar/Sidebar";
+import Footer from "./components/footer/Footer";
+import Navbar from './components/navbar/Navbar'
 
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <Navbar />
