@@ -1,0 +1,13 @@
+.App {
+    margin: 0;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pages {
+    background-color: azure;
+    width: 100%;
+}
