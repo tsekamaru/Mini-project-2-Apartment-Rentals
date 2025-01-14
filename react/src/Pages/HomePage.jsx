@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import List from "../components/List/List";
 
-function Homepage() {
+function Homepage({ itemList }) {
   return (
     <div>
-      HomePAGE
-      <List />
+      Homepage
+      <List itemList={itemList} />
     </div>
   );
 }

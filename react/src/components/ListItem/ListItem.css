@@ -1,0 +1,9 @@
+.card img {
+  height: 10rem;
+  object-fit: cover;
+}
+
+.card-text {
+  font-size: 0.75rem;
+  line-height: 0.5rem;
+}
