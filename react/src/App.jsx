@@ -3,7 +3,7 @@ import Homepage from "./pages/HomePage";
 import Sidebar from "./components/sidebar/Sidebar";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import listings from "./data/listings.json";
+import listings from "./data/listings.json"; 
 import { useState } from "react";
 
 function App() {
