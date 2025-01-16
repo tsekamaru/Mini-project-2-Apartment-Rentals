@@ -1,24 +1,19 @@
 import "./Sidebar.css"
+import { Link } from 'react-router'
+
+
 
 function Sidebar() {
   return (
     <div id="sidebar">
+      
       <ul>
-        <li>1 bedroom</li>
-        <li>2 bedrooms</li>
-        <li>Studios</li>
-        <li>1 bedroom</li>
-        <li>2 bedrooms</li>
-        <li>Studios</li>
-        <li>1 bedroom</li>
-        <li>2 bedrooms</li>
-        <li>Studios</li>
-        <li>1 bedroom</li>
-        <li>2 bedrooms</li>
-        <li>Studios</li>
+        <li><Link to={"/apartments"}>Apartments</Link></li>
+        <li><Link to={"/about"}>About</Link></li>
       </ul>
     </div>
   );
 }
+
 
 export default Sidebar;
