@@ -3,13 +3,16 @@ import Homepage from "./pages/HomePage";
 
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-
 import { Routes, Route } from "react-router";
 import AboutPage from "./pages/Aboutpage";
 import ErrorPage from "./pages/Errorpage";
 import Apartments from "./pages/Apartments";
+import listings from "./data/listings.json"; 
+import { useState } from "react";
+
 
 function App() {
+  const [itemList] = useState(listings.results);
   return (
     <div className="App">
       <Navbar />
@@ -22,8 +25,9 @@ function App() {
       </Routes>
       <div id="main-content">
         <div id="pages">
-          
-          
+
+          <Homepage itemList={itemList} />
+
         </div>
         
       </div>
