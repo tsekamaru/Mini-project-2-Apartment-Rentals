@@ -1,7 +1,22 @@
 #sidebar {
-    background-color: beige;
+  background-color: beige;
+  position: fixed; 
+  height: 100vh;   
+  top: 0;          
+  left: 0;
 }
 
 #sidebar ul {
-  list-style-type: none;
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  flex-direction: column;
+  text-decoration: none;
 }
+
