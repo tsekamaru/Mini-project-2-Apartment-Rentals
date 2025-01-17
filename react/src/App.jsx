@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router";
 import AboutPage from "./pages/Aboutpage";
 import ErrorPage from "./pages/Errorpage";
 import Apartments from "./pages/Apartments";
-import listings from "./data/listings.json"; 
+import listings from './Data/listings.json';
 import { useState } from "react";
 
 
@@ -18,7 +18,7 @@ function App() {
       <Navbar />
       
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage itemList={itemList}/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/apartments" element={<Apartments />} />
         <Route path="*" element={<ErrorPage />}/>
@@ -26,7 +26,7 @@ function App() {
       <div id="main-content">
         <div id="pages">
 
-          <Homepage itemList={itemList} />
+          
 
         </div>
         
