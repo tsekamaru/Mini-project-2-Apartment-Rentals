@@ -3,8 +3,10 @@
 import "./ListItem.css";
 import Badge from "./Badge";
 import Star from "./Star";
+import listingData from "../../Data/listings.json";
 
-function ListItem({ item }) {
+function ListItem({ item, onDelete }) {
+  const apartments = listingData.results;
   return (
     <div className="card m-2" style={{ width: "20rem" }}>
       <img
@@ -28,7 +30,8 @@ function ListItem({ item }) {
 
         <p className="card-text">Price: {item.price} a night</p>
       </div>
-      <a href="#" className="btn btn-primary m-4">
+      <button className="btn btn-primary m-4" onClick={onDelete}>Delete</button>
+      <a href={item.listing_url} className="btn btn-primary m-4">
         Details
       </a>
     </div>
