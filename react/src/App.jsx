@@ -11,10 +11,12 @@ import ErrorPage from "./pages/Errorpage";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [itemList] = useState(listings.results);
+  const [itemList, setItemList] = useState(listings.results);
+  const addListItem = (item) => setItemList([item, ...itemList]);
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar addListItem={addListItem} />
 
       <Routes>
         <Route path="/" element={<Homepage itemList={itemList} />} />

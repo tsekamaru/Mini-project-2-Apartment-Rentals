@@ -1,92 +1,147 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import listingData from "../../Data/listings.json";
 
-function Form() {
-  const [apartment, setApartment] = useState(listingData.results);
+function Form({ addListItem }) {
+  const [apartment, setApartment] = useState({});
 
-  const [itemName, setItemName] = useState("");
-  const [hostName, setHostName] = useState("");
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
-  const [price, setPrice] = useState("");
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const input = type === "checkbox" ? checked : value;
+    setApartment({ ...apartment, [name]: input });
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const newApartment = {
-      itemName,
-      hostName,
-      description,
-      location,
-      price,
-    };
-    setApartment((prevApartment) => [...prevApartment, newApartment]);
 
-    setItemName("");
-    setHostName("");
-    setDescription("");
-    setLocation("");
-    setPrice("");
+    addListItem(apartment);
+
+    setApartment({
+      id: "",
+      picture_url: "",
+      name: "",
+      property_type: "",
+      host_name: "",
+      host_identity_verified: false,
+      host_is_superhost: false,
+      neighbourhood: "",
+      review_scores_rating: 0,
+      price: 0,
+    });
   };
 
   return (
     <div className="mt-5">
       <h5 className="ms-3">Adding new listing</h5>
+
       <form className="mt-3" onSubmit={handleFormSubmit}>
+        <label className="form-label fw-semibold">
+          Picture URL:
+          <input
+            className="form-control"
+            type="url"
+            name="picture_url"
+            value={apartment.picture_url}
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+
         <label className="form-label fw-semibold">
           Name:
           <input
             className="form-control"
             type="text"
-            name="itemName"
-            value={itemName}
-            onChange={(e) => setItemName(e.target.value)}
+            name="name"
+            value={apartment.name}
+            onChange={handleChange}
           />
         </label>
         <br></br>
+
+        <label className="form-label fw-semibold">
+          Property type:
+          <input
+            className="form-control"
+            type="text"
+            name="property_type"
+            value={apartment.property_type}
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+
         <label className="form-label fw-semibold">
           Host Name:
           <input
             className="form-control"
             type="text"
-            name="hostName"
-            value={hostName}
-            onChange={(e) => setHostName(e.target.value)}
+            name="host_name"
+            value={apartment.host_name}
+            onChange={handleChange}
           />
         </label>
         <br></br>
+
         <label className="form-label fw-semibold">
-          Description:
+          Identity verified:
           <input
-            className="form-control"
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            className="form-check-input"
+            type="checkbox"
+            name="host_identity_verified"
+            value={apartment.host_identity_verified}
+            onChange={handleChange}
           />
         </label>
         <br></br>
+
+        <label className="form-label fw-semibold">
+          Superhost:
+          <input
+            className="form-check-input"
+            type="checkbox"
+            name="host_is_superhost"
+            checked={apartment.host_is_superhost}
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+
         <label className="form-label fw-semibold">
           Location:
           <input
             className="form-control"
             type="text"
-            name="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            name="neighbourhood"
+            value={apartment.neighbourhood}
+            onChange={handleChange}
           />
         </label>
         <br></br>
+
+        <label className="form-label fw-semibold">
+          Rating:
+          <input
+            className="form-control"
+            type="number"
+            name="review_scores_rating"
+            value={apartment.review_scores_rating}
+            onChange={handleChange}
+          />
+        </label>
+        <br></br>
+
         <label className="form-label fw-semibold">
           Price:
           <input
             className="form-control"
             type="text"
             name="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            value={apartment.price}
+            onChange={handleChange}
           />
         </label>
         <br></br>
+
         <button className="btn btn-primary" type="submit">
           Add New Apartment
         </button>

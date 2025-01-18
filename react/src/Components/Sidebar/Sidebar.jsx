@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router";
 import Form from "../Form/Form";
 
-function Sidebar() {
+function Sidebar({ addListItem }) {
   return (
     <div
       className="offcanvas offcanvas-start bg-light-subtle"
@@ -40,7 +41,7 @@ function Sidebar() {
             </a>
           </Link>
         </div>
-        <Form />
+        <Form addListItem={addListItem} />
       </div>
     </div>
   );

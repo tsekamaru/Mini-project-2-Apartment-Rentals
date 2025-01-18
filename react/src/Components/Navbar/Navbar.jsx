@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router";
 import Sidebar from "../Sidebar/Sidebar";
 
-function Navbar() {
+function Navbar({ addListItem }) {
   return (
     <>
       <nav className="navbar bg-primary-subtle">
@@ -22,7 +23,7 @@ function Navbar() {
           </Link> */}
         </div>
       </nav>
-      <Sidebar />
+      <Sidebar addListItem={addListItem} />
     </>
   );
 }
