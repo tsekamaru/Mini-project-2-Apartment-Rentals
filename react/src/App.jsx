@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router";
 import { useState } from "react";
 import listings from "./Data/listings.json";
 
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from './components/navbar/Navbar';
 import Homepage from "./pages/HomePage";
 import AboutPage from "./pages/Aboutpage";
 import Apartments from "./pages/Apartments";
